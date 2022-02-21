@@ -1,5 +1,5 @@
 {
-  "name": "@storyblok/vue-ws",
+  "name": "@storyblok/vue-2-ws",
   "private": true,
   "version": "0.0.1",
   "workspaces": [

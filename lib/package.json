@@ -1,16 +1,16 @@
 {
-  "name": "@storyblok/vue",
+  "name": "@storyblok/vue-2",
   "version": "0.0.0-development",
   "description": "Storyblok SDK for Vue 2 to interact with Storyblok API and connect to Storyblok Visual Editor",
-  "main": "./dist/storyblok-vue.js",
-  "module": "./dist/storyblok-vue.mjs",
+  "main": "./dist/storyblok-vue-2.js",
+  "module": "./dist/storyblok-vue-2.mjs",
   "files": [
     "dist"
   ],
   "exports": {
     ".": {
-      "import": "./dist/storyblok-vue.mjs",
-      "require": "./dist/storyblok-vue.js"
+      "import": "./dist/storyblok-vue-2.mjs",
+      "require": "./dist/storyblok-vue-2.js"
     }
   },
   "scripts": {
@@ -65,7 +65,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storyblok/storyblok-vue"
+    "url": "https://github.com/storyblok/storyblok-vue-2"
   },
   "keywords": [
     "vue",
@@ -73,9 +73,9 @@
   ],
   "author": "Alexander Feiglstorfer",
   "bugs": {
-    "url": "https://github.com/storyblok/storyblok-vue/issues"
+    "url": "https://github.com/storyblok/storyblok-vue-2/issues"
   },
-  "homepage": "https://github.com/storyblok/storyblok-vue",
+  "homepage": "https://github.com/storyblok/storyblok-vue-2",
   "release": {
     "branches": [
       "main"
