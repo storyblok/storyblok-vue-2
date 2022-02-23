@@ -1,5 +1,5 @@
 import Vue from "vue";
-import { StoryblokVue, apiPlugin } from "@storyblok/vue";
+import { StoryblokVue, apiPlugin } from "@storyblok/vue-2";
 import App from "./App.vue";
 
 Vue.use(StoryblokVue, {

@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { useStoryblokBridge } from "@storyblok/vue";
+import { useStoryblokBridge } from "@storyblok/vue-2";
 
 export default {
   data: () => ({
