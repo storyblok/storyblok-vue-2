@@ -1,6 +1,6 @@
 {
   "name": "@storyblok/vue-2",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "Storyblok SDK for Vue 2 to interact with Storyblok API and connect to Storyblok Visual Editor",
   "main": "./dist/storyblok-vue-2.js",
   "module": "./dist/storyblok-vue-2.mjs",
