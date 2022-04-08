@@ -21,7 +21,7 @@
     "@commitlint/config-conventional": "^16.2.1",
     "@vue/composition-api": "^1.4.4",
     "eslint": "^8.2.0",
-    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-vue": "^8.0.3",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.7",
