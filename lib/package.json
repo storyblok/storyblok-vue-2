@@ -23,11 +23,11 @@
     "prepublishOnly": "npm run build && cp ../README.md ./"
   },
   "peerDependencies": {
-    "@vue/composition-api": "^1.4.9"
+    "@vue/composition-api": "^1.5.0"
   },
   "dependencies": {
     "@storyblok/js": "^1.1.0",
-    "@vue/composition-api": "^1.4.9"
+    "@vue/composition-api": "^1.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
