@@ -17,7 +17,7 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.2.3",
+    "@commitlint/cli": "^17.0.0",
     "@commitlint/config-conventional": "^16.2.1",
     "@vue/composition-api": "^1.6.1",
     "eslint": "^8.13.0",
