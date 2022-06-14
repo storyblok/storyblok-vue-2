@@ -37,3 +37,5 @@ export const StoryblokVue = {
 if (typeof window !== "undefined" && window.Vue) {
   window.Vue.use(StoryblokVue);
 }
+
+export * from "./types";
