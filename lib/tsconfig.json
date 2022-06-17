@@ -11,6 +11,6 @@
   "extends": "@vue/tsconfig/tsconfig.json",
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Vue",
-  "include": ["./*.vue", "./**/*.ts"],
-  "exclude": ["node_modules/*", "vite.config.ts"]
+  "include": ["./src/**/*.ts"],
+  "exclude": ["node_modules"]
 }

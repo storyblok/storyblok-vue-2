@@ -1,3 +1,11 @@
+import type { StoryblokClient } from "@storyblok/js";
+
+declare module "vue/types/vue" {
+  interface Vue {
+    $storyblokApi: StoryblokClient;
+  }
+}
+
 export type {
   AlternateObject,
   Richtext,
@@ -16,6 +24,7 @@ export type {
   StoryblokCacheProvider,
   StoryblokClient,
   StoryblokConfig,
+  StoryblokComponentType,
   StoryblokManagmentApiResult,
   StoryblokResult,
   apiPlugin,
