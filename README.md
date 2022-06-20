@@ -293,7 +293,7 @@ sbBridge.on(["input", "published", "change"], (event) => {
 
 ### Compatibility
 
-This plugin is for Vue 3. Thus, it supports the [same browsers as Vue 3](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0038-vue3-ie11-support.md). In short: all modern browsers, dropping IE support.
+This plugin is for Vue 2. Thus, it supports the [same browsers as Vue 3](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0038-vue3-ie11-support.md). In short: all modern browsers, dropping IE support.
 
 ## 🔗 Related Links
 
