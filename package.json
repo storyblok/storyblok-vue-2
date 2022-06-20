@@ -29,7 +29,7 @@
     "unplugin-vue2-script-setup": "^0.10.2"
   },
   "lint-staged": {
-    "*.{vue,js,css}": [
+    "*.{vue,js,css,ts}": [
       "prettier --write",
       "eslint"
     ],
