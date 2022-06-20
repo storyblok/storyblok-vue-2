@@ -9,4 +9,6 @@ Vue.use(StoryblokVue, {
   use: [apiPlugin], // use it only if you need it
 });
 
+Vue.config.performance = true;
+
 new Vue({ render: (h) => h(App) }).$mount("#app");

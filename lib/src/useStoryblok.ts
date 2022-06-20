@@ -1,9 +1,19 @@
 import { ref, onMounted } from "@vue/composition-api";
 import { useStoryblokApi, useStoryblokBridge } from "./index";
 import { printError } from "./utils";
+import type {
+  StoryData,
+  StoriesParams,
+  StoryblokBridgeConfigV2,
+} from "./types";
+import type { Ref } from "@vue/composition-api";
 
-export default (url, apiOptions = {}, bridgeOptions = {}) => {
-  const story = ref(null);
+export default (
+  url: string,
+  apiOptions: StoriesParams = {},
+  bridgeOptions: StoryblokBridgeConfigV2 = {}
+) => {
+  const story: Ref<StoryData> = ref(null);
   const storyblokApiInstance = useStoryblokApi();
 
   onMounted(async () => {
