@@ -19,14 +19,12 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^16.2.1",
-    "@vue/composition-api": "^1.6.1",
     "eslint": "^8.20.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-vue": "^8.7.1",
     "husky": "^8.0.1",
     "lint-staged": "^12.4.0",
-    "prettier": "^2.6.2",
-    "unplugin-vue2-script-setup": "^0.10.2"
+    "prettier": "^2.6.2"
   },
   "lint-staged": {
     "*.{vue,js,css,ts}": [
