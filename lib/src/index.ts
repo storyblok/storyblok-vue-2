@@ -21,7 +21,7 @@ export const useStoryblokApi = () => {
   return storyblokApiInstance;
 };
 
-export { useStoryblokBridge, apiPlugin } from "@storyblok/js";
+export { useStoryblokBridge, apiPlugin, renderRichText } from "@storyblok/js";
 export { default as StoryblokComponent } from "./StoryblokComponent.vue";
 export { default as useStoryblok } from "./useStoryblok.js";
 
