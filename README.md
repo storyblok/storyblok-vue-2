@@ -110,13 +110,13 @@ Load globally the Vue components you want to link to Storyblok in your _main.js_
 import Page from "./components/Page.vue";
 import Teaser from "./components/Teaser.vue";
 
-app.use(StoryblokVue, {
+Vue.use(StoryblokVue, {
   accessToken: "<your-token>",
   use: [apiPlugin],
 });
 
-app.component("Page", Page);
-app.component("Teaser", Teaser);
+Vue.component("Page", Page);
+Vue.component("Teaser", Teaser);
 ```
 
 Use `useStoryblok` in your pages to fetch Storyblok stories and listen to real-time updates, as well as `StoryblokComponent` to render any component you've loaded before, like in this example:
@@ -142,11 +142,57 @@ You can easily render rich text by using the `renderRichText` function that come
 </template>
 
 <script setup>
-  import { computed } from "@vue/composition-api";
-  import { renderRichText } from "@storyblok/vue";
+  import { computed } from "vue";
+  import { renderRichText } from "@storyblok/vue-2";
 
   const articleContent = computed(() => renderRichText(blok.articleContent));
 </script>
+```
+
+You can set a **custom Schema and component resolver globally** at init time by using the `richText` init option:
+
+```js
+import { RichTextSchema, StoryblokVue } from "@storyblok/vue-2";
+import cloneDeep from "clone-deep";
+
+const mySchema = cloneDeep(RichTextSchema); // you can make a copy of the default RichTextSchema
+// ... and edit the nodes and marks, or add your own.
+// Check the base RichTextSchema source here https://github.com/storyblok/storyblok-js-client/blob/master/source/schema.js
+
+app.use(StoryblokVue, {
+  accessToken: "YOUR_ACCESS_TOKEN",
+  use: [apiPlugin],
+  richText: {
+    schema: mySchema,
+    resolver: (component, blok) => {
+      switch (component) {
+        case "my-custom-component":
+          return `<div class="my-component-class">${blok.text}</div>`;
+        default:
+          return "Resolver not defined";
+      }
+    },
+  },
+});
+```
+
+You can also set a **custom Schema and component resolver only once** by passing the options as the second parameter to `renderRichText` function:
+
+```js
+import { renderRichText } from "@storyblok/vue-2";
+
+renderRichText(blok.richTextField, {
+  schema: mySchema,
+  resolver: (component, blok) => {
+    switch (component) {
+      case "my-custom-component":
+        return `<div class="my-component-class">${blok.text}</div>`;
+        break;
+      default:
+        return `Component ${component} not found`;
+    }
+  },
+});
 ```
 
 #### Long Form
