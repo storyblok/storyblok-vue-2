@@ -1,4 +1,4 @@
-import { ref, onMounted } from "@vue/composition-api";
+import { ref, onMounted } from "vue";
 import { useStoryblokApi, useStoryblokBridge } from "./index";
 import { printError } from "./utils";
 import type {
@@ -6,7 +6,7 @@ import type {
   StoriesParams,
   StoryblokBridgeConfigV2,
 } from "./types";
-import type { Ref } from "@vue/composition-api";
+import type { Ref } from "vue";
 
 export default (
   url: string,

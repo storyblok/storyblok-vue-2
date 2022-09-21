@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Vue 3</h2>
+    <h2>Vue 2.7</h2>
     <div data-test="editable" v-editable="blok.content">
       Open DevTools and inspect this &lt;div&gt;. You should see a
       <i>data-blok-c</i>

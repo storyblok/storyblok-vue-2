@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-import { onMounted } from "@vue/composition-api";
+import { onMounted } from "vue";
 import { useStoryblokBridge, useStoryblokApi } from "@storyblok/vue-2";
 
 const blok = {

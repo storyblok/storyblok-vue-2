@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from "@vue/composition-api";
+import { onMounted, ref } from "vue";
 import { useStoryblokBridge, useStoryblokApi } from "@storyblok/vue-2";
 
 const story = ref(null);

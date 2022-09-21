@@ -1,5 +1,4 @@
 import Vue from "vue";
-import VueCompositionAPI from "@vue/composition-api";
 import { StoryblokVue, apiPlugin } from "@storyblok/vue-2";
 import App from "./App.vue";
 import Grid from "./components/Grid.vue";
@@ -11,7 +10,6 @@ Vue.use(StoryblokVue, {
   accessToken: "OurklwV5XsDJTIE1NJaD2wtt",
   use: [apiPlugin],
 });
-Vue.use(VueCompositionAPI);
 
 Vue.component("Grid", Grid);
 Vue.component("Page", Page);
