@@ -17,10 +17,9 @@ export default defineConfig(() => {
         output: {
           globals: {
             vue: "Vue",
-            "@vue/composition-api": "VueCompositionAPI",
           },
         },
-        external: ["axios", "vue", "@vue/composition-api"], // FIX: temporary till we remove axios dependency in storyblok-js-client
+        external: ["axios", "vue"], // FIX: temporary till we remove axios dependency in storyblok-js-client
       },
     },
     plugins: [createVuePlugin()],
