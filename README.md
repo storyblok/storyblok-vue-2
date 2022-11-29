@@ -30,7 +30,7 @@
   </a>
 </p>
 
-**Note**: This plugin is for Vue 2. [Check out the docs for Vue 3 version](https://github.com/storyblok/storyblok-vue-2/tree/next).
+**Note**: This plugin is for Vue 2. [Check out the docs for Vue 3 version](https://github.com/storyblok/storyblok-vue).
 
 ## 🚀 Usage
 
@@ -66,7 +66,15 @@ That's it! All the features are enabled for you: the _Api Client_ for interactin
 
 #### Composition API
 
-Install [@vue/composition-api](https://github.com/vuejs/composition-api) and register it in the application:
+- Using Vue 2.7
+
+As Vue 2.7 comes with Composition API under the hood you just need to import everything from `"vue"`.
+
+> Note: `@storyblok/vue-2` v2.0.0 doesn't support Vue 2.6 anymore.
+
+- Using Vue 2.6 or less
+
+Use a v1.x.x from this SDK and then, install [@vue/composition-api](https://github.com/vuejs/composition-api) and register it in the application:
 
 ```js
 // main.js
@@ -227,7 +235,7 @@ Use `useStoryBridge` to get the new story every time is triggered a `change` eve
 
 ```html
 <script setup>
-  import { onMounted } from "vue";
+  import { onMounted, reactive } from "vue";
   import { useStoryblokBridge, useStoryblokApi } from "@storyblok/vue-2";
 
   onMounted(() => {
@@ -259,7 +267,7 @@ For every component you've defined in your Storyblok space, add the `v-editable`
 
 Where `blok` is the actual blok data coming from [Storblok's Content Delivery API](https://www.storyblok.com/docs/api/content-delivery?utm_source=github.com&utm_medium=readme&utm_campaign=storyblok-vue-2).
 
-Check out the [playground](/../../tree/master/playground-vca) for a full example.
+Check out the [playground](/../../tree/main/playground-vca) for a full example.
 
 ### Options API
 
@@ -292,7 +300,7 @@ This example of `useStoryblok`:
 
 ```html
 <script setup>
-  import { useStoryblok } from "@storyblok/vue";
+  import { useStoryblok } from "@storyblok/vue-2";
   const story = useStoryblok("home", { version: "draft" });
 </script>
 ```
@@ -301,8 +309,8 @@ Is equivalent to the following, using `useStoryblokBridge` and `useStoryblokApi`
 
 ```html
 <script setup>
-  import { onMounted } from "vue";
-  import { useStoryblokBridge, useStoryblokApi } from "@storyblok/vue";
+  import { onMounted, reactive } from "vue";
+  import { useStoryblokBridge, useStoryblokApi } from "@storyblok/vue-2";
 
   onMounted(() => {
     const storyblokApi = useStoryblokApi();
@@ -315,14 +323,16 @@ Is equivalent to the following, using `useStoryblokBridge` and `useStoryblokApi`
 
 #### Storyblok API
 
-You can use an `apiOptions` object. This is passed down to the (storyblok-js-client config object](https://github.com/storyblok/storyblok-js-client#class-storyblok). For spaces created in the United States, you have to set the `region` parameter accordingly `{ apiOptions: { region: 'us' } }`.
+You can use an `apiOptions` object. This is passed down to the [storyblok-js-client config object](https://github.com/storyblok/storyblok-js-client#class-storyblok).
+
+For spaces created in the United States, you have to set the `region` parameter accordingly `{ apiOptions: { region: 'us' } }`.
 
 ```js
 app.use(StoryblokVue, {
   accessToken: "<your-token>",
-  apiOptions: {
-    //storyblok-js-client config object
+  apiOptions: { // storyblok-js-client config object
     cache: { type: "memory" },
+    // region: 'us'
   },
   use: [apiPlugin],
 });
@@ -354,9 +364,62 @@ sbBridge.on(["input", "published", "change"], (event) => {
 });
 ```
 
+### How to migrate to 2.x.x (Vue 2.7 compatible)
+
+In this section we will see how to migrate the SDK in our project from v1.x.x to v2.x.x.
+
+#### 1. Update to plugin-vue2
+
+Vue 2.7 support for Vite is provided via a new plugin: `@vitejs/plugin-vue2`, that supersedes the existing `vite-plugin-vue2` for older versions.
+
+Update your `vite.config.js` file:
+
+```diff
+import { defineConfig } from "vite";
+- import { createVuePlugin } from "vite-plugin-vue2";
++ import createVuePlugin from "@vitejs/plugin-vue2";
+
+export default defineConfig({
+  plugins: [createVuePlugin()],
+});
+```
+
+#### 2. Update to latest version of vue
+
+Upgrade your project to the latest version of Vue 2.7.x.
+> For more information about the changes needed [see the official upgrade guide](https://blog.vuejs.org/posts/vue-2-7-naruto.html).
+
+#### 3. Remove Composition API
+
+Remove Vue Composition API from your project:
+
+```diff
+- import VueCompositionAPI from "@vue/composition-api";
+
+- Vue.use(VueCompositionAPI);
+```
+
+Change the imports from `"@vue/composition-api"` to `"vue"`:
+
+```diff
+- import { ref, onMounted } from "@vue/composition-api";
++ import { ref, onMounted } from "vue";
+```
+
 ### Compatibility
 
-This plugin is for Vue 3. Thus, it supports the [same browsers as Vue 3](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0038-vue3-ie11-support.md). In short: all modern browsers, dropping IE support.
+#### Vue versions
+
+The v2.x.x of this package is compatible with Vue 2.7.x.
+If you want to work with Vue 2.6 or less, use v1.x.x instead.
+
+#### Browsers
+
+This plugin is for Vue 2.7. Thus, it supports the [same browsers as Vue 2](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0038-vue3-ie11-support.md#for-those-who-absolutely-need-ie11-support). In short: all modern browsers, but also IE 11 support.
+
+#### Server Side Rendering
+
+Vue 2.7 does not allow top-level await. If you need SSR, you should use [Nuxt](https://github.com/nuxt/nuxt.js) instead, in combination with our [`nuxt-2`](https://github.com/storyblok/storyblok-nuxt-2) SDK.
 
 ## 🔗 Related Links
 
