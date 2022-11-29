@@ -68,31 +68,31 @@ That's it! All the features are enabled for you: the _Api Client_ for interactin
 
 - Using Vue 2.7
 
-As Vue 2.7 comes with Composition API under the hood you just need to import everything from `"vue"`.
+  As Vue 2.7 comes with Composition API under the hood you just need to import everything from `"vue"`.
 
-> Note: `@storyblok/vue-2` v2.0.0 doesn't support Vue 2.6 anymore.
+  > Note: `@storyblok/vue-2` v2.0.0 doesn't support Vue 2.6 anymore.
 
 - Using Vue 2.6 or less
 
-Use a v1.x.x from this SDK and then, install [@vue/composition-api](https://github.com/vuejs/composition-api) and register it in the application:
+  Use a v1.x.x from this SDK and then, install [@vue/composition-api](https://github.com/vuejs/composition-api) and register it in the application:
 
-```js
-// main.js
-import VueCompositionAPI from "@vue/composition-api";
-Vue.use(VueCompositionAPI);
-```
+  ```js
+  // main.js
+  import VueCompositionAPI from "@vue/composition-api";
+  Vue.use(VueCompositionAPI);
+  ```
 
-To use **script setup**, install [unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup). Depending on your setup, the configuration is different. For example, in Vite:
+  To use **script setup**, install [unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup). Depending on your setup, the configuration is different. For example, in Vite:
 
-```js
-// vite.config.js
-import { createVuePlugin } from "vite-plugin-vue2";
-import ScriptSetup from "unplugin-vue2-script-setup/vite";
-
-export default {
-  plugins: [createVuePlugin(), ScriptSetup()],
-};
-```
+  ```js
+  // vite.config.js
+  import { createVuePlugin } from "vite-plugin-vue2";
+  import ScriptSetup from "unplugin-vue2-script-setup/vite";
+  
+  export default {
+    plugins: [createVuePlugin(), ScriptSetup()],
+  };
+  ```
 
 #### From a CDN
 
