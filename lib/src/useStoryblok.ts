@@ -2,18 +2,18 @@ import { ref, onMounted } from "vue";
 import { useStoryblokApi, useStoryblokBridge } from "./index";
 import { printError } from "./utils";
 import type {
-  StoryData,
-  StoriesParams,
+  ISbStoryData,
+  ISbStoriesParams,
   StoryblokBridgeConfigV2,
 } from "./types";
 import type { Ref } from "vue";
 
 export default (
   url: string,
-  apiOptions: StoriesParams = {},
+  apiOptions: ISbStoriesParams = {},
   bridgeOptions: StoryblokBridgeConfigV2 = {}
 ) => {
-  const story: Ref<StoryData> = ref(null);
+  const story: Ref<ISbStoryData> = ref(null);
   const storyblokApiInstance = useStoryblokApi();
 
   onMounted(async () => {
