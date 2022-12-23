@@ -47,6 +47,8 @@ npm install --save-dev @storyblok/vue-2
 # yarn add -D @storyblok/vue-2
 ```
 
+> ⚠️ This SDK uses the Fetch API under the hood. If your environment doesn't support it, you need to install a polyfill like [isomorphic-fetch](https://github.com/matthew-andrews/isomorphic-fetch). More info on [storyblok-js-client docs](https://github.com/storyblok/storyblok-js-client#fetch-use-polyfill-if-needed---version-5).
+
 Register the plugin on your application (usually in `main.js`), add the `apiPlugin` and add the [access token](https://www.storyblok.com/docs/api/content-delivery#topics/authentication?utm_source=github.com&utm_medium=readme&utm_campaign=storyblok-vue-2) of your Storyblok space:
 
 ```js
@@ -88,7 +90,7 @@ That's it! All the features are enabled for you: the _Api Client_ for interactin
   // vite.config.js
   import { createVuePlugin } from "vite-plugin-vue2";
   import ScriptSetup from "unplugin-vue2-script-setup/vite";
-  
+
   export default {
     plugins: [createVuePlugin(), ScriptSetup()],
   };
@@ -330,7 +332,8 @@ For spaces created in the United States, you have to set the `region` parameter 
 ```js
 app.use(StoryblokVue, {
   accessToken: "<your-token>",
-  apiOptions: { // storyblok-js-client config object
+  apiOptions: {
+    // storyblok-js-client config object
     cache: { type: "memory" },
     // region: 'us'
   },
@@ -387,6 +390,7 @@ export default defineConfig({
 #### 2. Update to latest version of vue
 
 Upgrade your project to the latest version of Vue 2.7.x.
+
 > For more information about the changes needed [see the official upgrade guide](https://blog.vuejs.org/posts/vue-2-7-naruto.html).
 
 #### 3. Remove Composition API
