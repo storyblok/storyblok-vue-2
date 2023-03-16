@@ -17,6 +17,7 @@ export default defineConfig(() => {
         output: {
           globals: {
             vue: "Vue",
+            axios: "axios",
           },
         },
         external: ["axios", "vue"], // FIX: temporary till we remove axios dependency in storyblok-js-client
