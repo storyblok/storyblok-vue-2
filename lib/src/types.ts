@@ -1,32 +1,36 @@
 import type { StoryblokClient } from "@storyblok/js";
 
 declare module "vue/types/vue" {
+  // eslint-disable-next-line no-unused-vars
   interface Vue {
     $storyblokApi: StoryblokClient;
   }
 }
 
 export type {
-  AlternateObject,
-  Richtext,
-  RichtextInstance,
-  SbBlokData,
-  SbBlokKeyDataTypes,
-  SbSDKOptions,
-  Stories,
-  StoriesParams,
-  Story,
-  StoryData,
-  StoryParams,
-  StoryblokBridgeConfigV2,
-  StoryblokBridgeV2,
-  StoryblokCache,
-  StoryblokCacheProvider,
-  StoryblokClient,
-  StoryblokConfig,
+  ISbConfig,
+  ISbCache,
+  ISbResult,
+  ISbResponse,
+  ISbError,
+  ISbNode,
+  ISbSchema,
+  ThrottleFn,
+  AsyncFn,
+  ArrayFn,
+  ISbContentMangmntAPI,
+  ISbManagmentApiResult,
+  ISbStories,
+  ISbStory,
+  ISbDimensions,
   StoryblokComponentType,
-  StoryblokManagmentApiResult,
-  StoryblokResult,
-  apiPlugin,
-  useStoryblokBridge,
+  ISbStoryData,
+  ISbAlternateObject,
+  ISbStoriesParams,
+  ISbStoryParams,
+  ISbRichtext,
+  SbSDKOptions,
+  StoryblokClient,
+  StoryblokBridgeConfigV2,
+  SbInitResult,
 } from "@storyblok/js";
