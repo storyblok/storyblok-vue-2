@@ -33,7 +33,7 @@
     "@vitejs/plugin-vue2": "^2.2.0",
     "@vue/test-utils": "^1.3.4",
     "@vue/tsconfig": "^0.1.3",
-    "cypress": "^10.0.0",
+    "cypress": "^12.8.1",
     "eslint-plugin-cypress": "^2.12.1",
     "vite": "^3.2.5",
     "vitest": "^0.29.7",
