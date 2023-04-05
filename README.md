@@ -88,7 +88,7 @@ That's it! All the features are enabled for you: the _Api Client_ for interactin
   // vite.config.js
   import { createVuePlugin } from "vite-plugin-vue2";
   import ScriptSetup from "unplugin-vue2-script-setup/vite";
-  
+
   export default {
     plugins: [createVuePlugin(), ScriptSetup()],
   };
@@ -325,14 +325,12 @@ Is equivalent to the following, using `useStoryblokBridge` and `useStoryblokApi`
 
 You can use an `apiOptions` object. This is passed down to the [storyblok-js-client config object](https://github.com/storyblok/storyblok-js-client#class-storyblok).
 
-For spaces created in the United States, you have to set the `region` parameter accordingly `{ apiOptions: { region: 'us' } }`.
-
 ```js
 app.use(StoryblokVue, {
   accessToken: "<your-token>",
-  apiOptions: { // storyblok-js-client config object
+  apiOptions: {
+    // storyblok-js-client config object
     cache: { type: "memory" },
-    // region: 'us'
   },
   use: [apiPlugin],
 });
@@ -343,6 +341,28 @@ If you prefer to use your own fetch method, just remove the `apiPlugin` and `sto
 ```js
 app.use(StoryblokVue);
 ```
+
+#### Region parameter
+
+Possible values:
+
+- `eu` (default): For spaces created in the EU
+- `us`: For spaces created in the US
+- `cn`: For spaces created in China
+
+Full example for a space created in the US:
+
+```js
+app.use(StoryblokVue, {
+  accessToken: "<your-token>",
+  use: [apiPlugin],
+  apiOptions: {
+    region: "us",
+  },
+});
+```
+
+> Note: For spaces created in the United States or China, the `region` parameter **must** be specified.
 
 #### Storyblok Bridge
 
@@ -387,6 +407,7 @@ export default defineConfig({
 #### 2. Update to latest version of vue
 
 Upgrade your project to the latest version of Vue 2.7.x.
+
 > For more information about the changes needed [see the official upgrade guide](https://blog.vuejs.org/posts/vue-2-7-naruto.html).
 
 #### 3. Remove Composition API
@@ -420,6 +441,10 @@ This plugin is for Vue 2.7. Thus, it supports the [same browsers as Vue 2](https
 #### Server Side Rendering
 
 Vue 2.7 does not allow top-level await. If you need SSR, you should use [Nuxt](https://github.com/nuxt/nuxt.js) instead, in combination with our [`nuxt-2`](https://github.com/storyblok/storyblok-nuxt-2) SDK.
+
+## The Storyblok JavaScript SDK Ecosystem
+
+![A visual representation of the Storyblok JavaScript SDK Ecosystem](https://a.storyblok.com/f/88751/2400x1350/be4a4a4180/sdk-ecosystem.png/m/1200x0)
 
 ## 🔗 Related Links
 
