@@ -11,7 +11,8 @@
   "exports": {
     ".": {
       "import": "./dist/storyblok-vue-2.mjs",
-      "require": "./dist/storyblok-vue-2.js"
+      "require": "./dist/storyblok-vue-2.js",
+      "types": "./dist/index.d.ts"
     }
   },
   "scripts": {
