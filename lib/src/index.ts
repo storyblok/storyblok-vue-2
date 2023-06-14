@@ -13,7 +13,7 @@ const bindFn: DirectiveFunction = (el, binding) => {
   }
 };
 
-const vEditableDirective = { bind: bindFn };
+const vEditableDirective = { bind: bindFn, update: bindFn };
 
 let storyblokApiInstance: StoryblokClient = null;
 export const useStoryblokApi = () => {
