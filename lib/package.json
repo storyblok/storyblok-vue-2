@@ -26,7 +26,7 @@
     "prepublishOnly": "npm run build && cp ../README.md ./"
   },
   "dependencies": {
-    "@storyblok/js": "^2.2.11"
+    "@storyblok/js": "^2.2.12"
   },
   "devDependencies": {
     "@cypress/vite-dev-server": "^5.0.5",
