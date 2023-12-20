@@ -386,6 +386,8 @@ Possible values:
 
 - `eu` (default): For spaces created in the EU
 - `us`: For spaces created in the US
+- `ap`: For spaces created in Australia
+- `ca`: For spaces created in Canada
 - `cn`: For spaces created in China
 
 Full example for a space created in the US:
@@ -400,7 +402,7 @@ app.use(StoryblokVue, {
 });
 ```
 
-> Note: For spaces created in the United States or China, the `region` parameter **must** be specified.
+> Note: For spaces created in the US, Australia, Canada or China, the `region` parameter **must** be specified.
 
 #### Storyblok Bridge
 
