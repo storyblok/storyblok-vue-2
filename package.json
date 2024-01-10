@@ -26,7 +26,7 @@
     "husky": "^8.0.3",
     "lint-staged": "^15.2.0",
     "prettier": "^3.1.1",
-    "vue-eslint-parser": "^9.3.2"
+    "vue-eslint-parser": "^9.4.0"
   },
   "lint-staged": {
     "*.{vue,js,css,ts}": [
