@@ -9,3 +9,16 @@ updates:
       prefix: fix
       prefix-development: chore
       include: scope
+    groups:
+      linting-dx-tools:
+        patterns:
+          - "*lint*" # eslint, eslint-*, vue-eslint-parser, lint-staged, @commitlint/*, @typescript-eslint/*
+          - "prettier"
+          - "husky"
+          - "@vue/tsconfig"
+      testing-tools:
+        patterns:
+          - "vitest"
+          - "cypress"
+          - "@cypress/*"
+          - "@vue/test-utils"
