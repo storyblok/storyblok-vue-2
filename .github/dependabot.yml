@@ -16,9 +16,15 @@ updates:
           - "prettier"
           - "husky"
           - "@vue/tsconfig"
+        update-types:
+          - "minor"
+          - "patch"
       testing-tools:
         patterns:
           - "vitest"
           - "cypress"
           - "@cypress/*"
           - "@vue/test-utils"
+        update-types:
+          - "minor"
+          - "patch"
