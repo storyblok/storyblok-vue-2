@@ -30,7 +30,7 @@
   </a>
 </p>
 
-> ⚠️ **Storyblok Vue 2 SDK is reaching its End of Life on August 1st 2024.**
+> ⚠️ **Storyblok Vue 2 SDK is reaching its End of Life on August 31st 2024.**
 > The repository for the latest version of Vue is [storyblok-vue](https://github.com/storyblok/storyblok-vue).
 >
 > Vue 2 EOL was December 31st, 2023. If you are starting a new project using Vue and Storyblok, please start with the latest version of Vue (3.x) and [Storyblok Vue SDK](https://github.com/storyblok/storyblok-vue).
