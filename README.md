@@ -30,9 +30,9 @@
   </a>
 </p>
 
-> ⚠️ **Storyblok Vue 2 SDK is reaching its End of Life on August 31st 2024.**
-> The repository for the latest version of Vue is [storyblok-vue](https://github.com/storyblok/storyblok-vue).
->
+> [!WARNING]  
+> **Storyblok Vue 2 SDK is reaching its End of Life on August 31st 2024.** Please follow the [Migration Guide](https://dev.to/storyblok/official-deprecation-announcement-storyblok-vue-2-nuxt-2-sdks-n1g) to update your project to the latest version of Vue and [Storyblok Vue SDK](https://github.com/storyblok/storyblok-vue).
+
 > Vue 2 EOL was December 31st, 2023. If you are starting a new project using Vue and Storyblok, please start with the latest version of Vue (3.x) and [Storyblok Vue SDK](https://github.com/storyblok/storyblok-vue).
 
 ## 🚀 Usage
