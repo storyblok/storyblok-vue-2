@@ -16,6 +16,9 @@
   <a href="https://npmjs.com/package/@storyblok/vue-2" rel="nofollow">
     <img src="https://img.shields.io/npm/dt/@storyblok/vue-2.svg?style=flat-square" alt="npm">
   </a>
+<a href="https://npmjs.com/package/@storyblok/vue-2" rel="nofollow">
+    <img src="https://img.shields.io/maintenance/no/2024.svg" alt="No Mantainance">
+  </a>	
 </p>
 
 <p align="center">
@@ -31,7 +34,7 @@
 </p>
 
 > [!WARNING]  
-> **Storyblok Vue 2 SDK is reaching its End of Life on August 31st 2024.** Please follow the [Migration Guide](https://dev.to/storyblok/official-deprecation-announcement-storyblok-vue-2-nuxt-2-sdks-n1g) to update your project to the latest version of Vue and [Storyblok Vue SDK](https://github.com/storyblok/storyblok-vue).
+> **Storyblok Vue 2 SDK is deprecated as of August 31st, 2024.** Please follow the [Migration Guide](https://dev.to/storyblok/official-deprecation-announcement-storyblok-vue-2-nuxt-2-sdks-n1g) to update your project to the latest version of Vue and [Storyblok Vue SDK](https://github.com/storyblok/storyblok-vue).
 
 > Vue 2 EOL was December 31st, 2023. If you are starting a new project using Vue and Storyblok, please start with the latest version of Vue (3.x) and [Storyblok Vue SDK](https://github.com/storyblok/storyblok-vue).
 
